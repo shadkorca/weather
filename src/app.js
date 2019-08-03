@@ -5,6 +5,7 @@ const hbs = require('hbs');
 const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
 
+const port = process.env.PORT || 3000;
 
 // Define paths for application config
 const publicDirectoryPath = path.join(__dirname, '../public');
@@ -103,4 +104,4 @@ app.get('*', (req, res) => {
   })
 });
 
-app.listen(3000, ()=> { console.log('Starting on port 3000')});
+app.listen(port, ()=> {console.log(`Starting on port ${port}`)});
